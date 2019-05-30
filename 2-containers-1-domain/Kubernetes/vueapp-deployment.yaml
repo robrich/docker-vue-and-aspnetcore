@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vue-app-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: vue-app
+  template:
+    metadata:
+      labels:
+        app: vue-app
+        version: 2c1d
+    spec:
+      containers:
+      - name: vue-app
+        image: vue-app:2c1d
+        ports:
+        - containerPort: 80

@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: spa-and-api
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+  - http:
+  # TODO: add `host: example.com`
+      paths:
+      - path: /api
+        backend:
+          serviceName: net-api
+          servicePort: 5000
+      - path: /
+        backend:
+          serviceName: vue-app
+          servicePort: 80

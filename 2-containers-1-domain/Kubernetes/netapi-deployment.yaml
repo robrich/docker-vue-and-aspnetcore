@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: net-api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: net-api
+  template:
+    metadata:
+      labels:
+        app: net-api
+        version: 2c1d
+    spec:
+      containers:
+      - name: net-api
+        image: net-api:2c1d
+        ports:
+        - containerPort: 5000

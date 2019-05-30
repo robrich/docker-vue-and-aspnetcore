@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: net-api
+spec:
+  type: NodePort
+  selector:
+    app: net-api
+  ports:
+  - port: 5000
+    targetPort: 5000

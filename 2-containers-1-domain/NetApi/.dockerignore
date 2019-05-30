@@ -1,0 +1,8 @@
+bin
+obj
+*.user
+launchSettings.json
+*.suo
+.vs
+.vsignore
+*.log
